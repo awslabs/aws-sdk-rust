@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomVocabularyInput {
+pub struct DeleteCustomVocabularyInput  {
     /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct DeleteCustomVocabularyInput {
 }
 impl DeleteCustomVocabularyInput {
     /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to remove the custom vocabulary from.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl DeleteCustomVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder {
         crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl DeleteCustomVocabularyInputBuilder {
     }
     /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot to remove the custom vocabulary from.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeleteCustomVocabularyInputBuilder {
     }
     /// <p>The version of the bot to remove the custom vocabulary from.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeleteCustomVocabularyInputBuilder {
     }
     /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
         )
     }
 }
+

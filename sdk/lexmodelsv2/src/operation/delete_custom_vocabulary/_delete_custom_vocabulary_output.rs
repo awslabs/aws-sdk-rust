@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomVocabularyOutput {
+pub struct DeleteCustomVocabularyOutput  {
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -19,34 +19,30 @@ pub struct DeleteCustomVocabularyOutput {
 }
 impl DeleteCustomVocabularyOutput {
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that the custom vocabulary was removed from.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn custom_vocabulary_status(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomVocabularyStatus> {
+    pub fn custom_vocabulary_status(&self) -> std::option::Option<& crate::types::CustomVocabularyStatus> {
         self.custom_vocabulary_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteCustomVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteCustomVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyOutput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder {
         crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder::default()
     }
 }
@@ -69,8 +65,7 @@ impl DeleteCustomVocabularyOutputBuilder {
     }
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot that the custom vocabulary was removed from.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +74,7 @@ impl DeleteCustomVocabularyOutputBuilder {
     }
     /// <p>The version of the bot that the custom vocabulary was removed from.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +83,7 @@ impl DeleteCustomVocabularyOutputBuilder {
     }
     /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The status of removing the custom vocabulary.</p>
     pub fn custom_vocabulary_status(mut self, input: crate::types::CustomVocabularyStatus) -> Self {
@@ -98,30 +91,31 @@ impl DeleteCustomVocabularyOutputBuilder {
         self
     }
     /// <p>The status of removing the custom vocabulary.</p>
-    pub fn set_custom_vocabulary_status(
-        mut self,
-        input: std::option::Option<crate::types::CustomVocabularyStatus>,
-    ) -> Self {
-        self.custom_vocabulary_status = input;
-        self
+    pub fn set_custom_vocabulary_status(mut self, input: std::option::Option<crate::types::CustomVocabularyStatus>) -> Self {
+        self.custom_vocabulary_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteCustomVocabularyOutput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput).
     pub fn build(self) -> crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput {
         crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            custom_vocabulary_status: self.custom_vocabulary_status,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            custom_vocabulary_status: self.custom_vocabulary_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

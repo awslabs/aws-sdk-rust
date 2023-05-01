@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateCustomVocabularyItemInput {
+pub struct BatchUpdateCustomVocabularyItemInput  {
     /// <p>The identifier of the bot associated with this custom vocabulary</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -14,32 +14,29 @@ pub struct BatchUpdateCustomVocabularyItemInput {
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_item_list:
-        std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub custom_vocabulary_item_list: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
 }
 impl BatchUpdateCustomVocabularyItemInput {
     /// <p>The identifier of the bot associated with this custom vocabulary</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn custom_vocabulary_item_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::CustomVocabularyItem]> {
+    pub fn custom_vocabulary_item_list(&self) -> std::option::Option<& [crate::types::CustomVocabularyItem]> {
         self.custom_vocabulary_item_list.as_deref()
     }
 }
 impl BatchUpdateCustomVocabularyItemInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateCustomVocabularyItemInput`](crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemInput).
-    pub fn builder() -> crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemInputBuilder{
+    pub fn builder() -> crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemInputBuilder {
         crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemInputBuilder::default()
     }
 }
@@ -51,8 +48,7 @@ pub struct BatchUpdateCustomVocabularyItemInputBuilder {
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
     pub(crate) locale_id: std::option::Option<std::string::String>,
-    pub(crate) custom_vocabulary_item_list:
-        std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub(crate) custom_vocabulary_item_list: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
 }
 impl BatchUpdateCustomVocabularyItemInputBuilder {
     /// <p>The identifier of the bot associated with this custom vocabulary</p>
@@ -62,8 +58,7 @@ impl BatchUpdateCustomVocabularyItemInputBuilder {
     }
     /// <p>The identifier of the bot associated with this custom vocabulary</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl BatchUpdateCustomVocabularyItemInputBuilder {
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,38 +76,25 @@ impl BatchUpdateCustomVocabularyItemInputBuilder {
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Appends an item to `custom_vocabulary_item_list`.
     ///
     /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
     ///
     /// <p>A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn custom_vocabulary_item_list(
-        mut self,
-        input: crate::types::CustomVocabularyItem,
-    ) -> Self {
+    pub fn custom_vocabulary_item_list(mut self, input: crate::types::CustomVocabularyItem) -> Self {
         let mut v = self.custom_vocabulary_item_list.unwrap_or_default();
-        v.push(input);
-        self.custom_vocabulary_item_list = Some(v);
-        self
+                        v.push(input);
+                        self.custom_vocabulary_item_list = Some(v);
+                        self
     }
     /// <p>A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    pub fn set_custom_vocabulary_item_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
-    ) -> Self {
-        self.custom_vocabulary_item_list = input;
-        self
+    pub fn set_custom_vocabulary_item_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>) -> Self {
+        self.custom_vocabulary_item_list = input; self
     }
     /// Consumes the builder and constructs a [`BatchUpdateCustomVocabularyItemInput`](crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemInput {
                 bot_id: self.bot_id
@@ -128,3 +109,4 @@ impl BatchUpdateCustomVocabularyItemInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBackupJobsInput {
+pub struct ListBackupJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -24,24 +24,24 @@ pub struct ListBackupJobsInput {
     /// <p>Returns only backup jobs that were created after the specified date.</p>
     #[doc(hidden)]
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns only backup jobs for the specified resources:</p>
-    /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <p>Returns only backup jobs for the specified resources:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub by_resource_type: std::option::Option<std::string::String>,
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p> 
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     #[doc(hidden)]
     pub by_account_id: std::option::Option<std::string::String>,
@@ -57,7 +57,7 @@ pub struct ListBackupJobsInput {
 }
 impl ListBackupJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -65,58 +65,58 @@ impl ListBackupJobsInput {
         self.max_results
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn by_resource_arn(&self) -> std::option::Option<& str> {
         self.by_resource_arn.as_deref()
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
-    pub fn by_state(&self) -> std::option::Option<&crate::types::BackupJobState> {
+    pub fn by_state(&self) -> std::option::Option<& crate::types::BackupJobState> {
         self.by_state.as_ref()
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn by_backup_vault_name(&self) -> std::option::Option<&str> {
+    pub fn by_backup_vault_name(&self) -> std::option::Option<& str> {
         self.by_backup_vault_name.as_deref()
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub fn by_created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub fn by_created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
-    /// <p>Returns only backup jobs for the specified resources:</p>
-    /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <p>Returns only backup jobs for the specified resources:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
     /// </ul>
-    pub fn by_resource_type(&self) -> std::option::Option<&str> {
+    pub fn by_resource_type(&self) -> std::option::Option<& str> {
         self.by_resource_type.as_deref()
     }
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p> 
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn by_account_id(&self) -> std::option::Option<&str> {
+    pub fn by_account_id(&self) -> std::option::Option<& str> {
         self.by_account_id.as_deref()
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_complete_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_complete_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_complete_before.as_ref()
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(&self) -> std::option::Option<&str> {
+    pub fn by_parent_job_id(&self) -> std::option::Option<& str> {
         self.by_parent_job_id.as_deref()
     }
 }
@@ -152,8 +152,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,8 +161,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +170,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_resource_arn = input;
-        self
+        self.by_resource_arn = input; self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
     pub fn by_state(mut self, input: crate::types::BackupJobState) -> Self {
@@ -181,12 +178,8 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
-    pub fn set_by_state(
-        mut self,
-        input: std::option::Option<crate::types::BackupJobState>,
-    ) -> Self {
-        self.by_state = input;
-        self
+    pub fn set_by_state(mut self, input: std::option::Option<crate::types::BackupJobState>) -> Self {
+        self.by_state = input; self
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn by_backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,12 +187,8 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_by_backup_vault_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.by_backup_vault_name = input;
-        self
+    pub fn set_by_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.by_backup_vault_name = input; self
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
     pub fn by_created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -207,12 +196,8 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_created_before = input;
-        self
+    pub fn set_by_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_created_before = input; self
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
     pub fn by_created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -220,62 +205,56 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_created_after = input;
-        self
+    pub fn set_by_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_created_after = input; self
     }
-    /// <p>Returns only backup jobs for the specified resources:</p>
-    /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <p>Returns only backup jobs for the specified resources:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
     /// </ul>
     pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.by_resource_type = Some(input.into());
         self
     }
-    /// <p>Returns only backup jobs for the specified resources:</p>
-    /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <p>Returns only backup jobs for the specified resources:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
     /// </ul>
     pub fn set_by_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_resource_type = input;
-        self
+        self.by_resource_type = input; self
     }
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p> 
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.by_account_id = Some(input.into());
         self
     }
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p> 
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub fn set_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_account_id = input;
-        self
+        self.by_account_id = input; self
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -283,12 +262,8 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_complete_after = input;
-        self
+    pub fn set_by_complete_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_complete_after = input; self
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -296,12 +271,8 @@ impl ListBackupJobsInputBuilder {
         self
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_complete_before = input;
-        self
+    pub fn set_by_complete_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_complete_before = input; self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn by_parent_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -310,29 +281,38 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn set_by_parent_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_parent_job_id = input;
-        self
+        self.by_parent_job_id = input; self
     }
     /// Consumes the builder and constructs a [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_backup_jobs::ListBackupJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_backup_jobs::ListBackupJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            by_resource_arn: self.by_resource_arn,
-            by_state: self.by_state,
-            by_backup_vault_name: self.by_backup_vault_name,
-            by_created_before: self.by_created_before,
-            by_created_after: self.by_created_after,
-            by_resource_type: self.by_resource_type,
-            by_account_id: self.by_account_id,
-            by_complete_after: self.by_complete_after,
-            by_complete_before: self.by_complete_before,
-            by_parent_job_id: self.by_parent_job_id,
-        })
+    pub fn build(self) -> Result<crate::operation::list_backup_jobs::ListBackupJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_backup_jobs::ListBackupJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_resource_arn: self.by_resource_arn
+                ,
+                by_state: self.by_state
+                ,
+                by_backup_vault_name: self.by_backup_vault_name
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_resource_type: self.by_resource_type
+                ,
+                by_account_id: self.by_account_id
+                ,
+                by_complete_after: self.by_complete_after
+                ,
+                by_complete_before: self.by_complete_before
+                ,
+                by_parent_job_id: self.by_parent_job_id
+                ,
+            }
+        )
     }
 }
+

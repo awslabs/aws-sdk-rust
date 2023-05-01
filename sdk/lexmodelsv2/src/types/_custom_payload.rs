@@ -3,14 +3,14 @@
 /// <p>A custom response string that Amazon Lex sends to your application. You define the content and structure the string.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPayload {
+pub struct CustomPayload  {
     /// <p>The string that is sent to your application.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomPayload {
     /// <p>The string that is sent to your application.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl CustomPayloadBuilder {
     }
     /// <p>The string that is sent to your application.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`CustomPayload`](crate::types::CustomPayload).
     pub fn build(self) -> crate::types::CustomPayload {
-        crate::types::CustomPayload { value: self.value }
+        crate::types::CustomPayload {
+            value: self.value
+            ,
+        }
     }
 }
+

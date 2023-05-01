@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBotVersionInput {
+pub struct DescribeBotVersionInput  {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribeBotVersionInput {
 }
 impl DescribeBotVersionInput {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to return metadata for.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
 }
 impl DescribeBotVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder {
         crate::operation::describe_bot_version::builders::DescribeBotVersionInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeBotVersionInputBuilder {
     }
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DescribeBotVersionInputBuilder {
     }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_bot_version::DescribeBotVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_bot_version::DescribeBotVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_bot_version::DescribeBotVersionInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-            },
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+            }
         )
     }
 }
+

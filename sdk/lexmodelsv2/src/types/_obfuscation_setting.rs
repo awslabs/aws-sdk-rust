@@ -3,16 +3,14 @@
 /// <p>Determines whether Amazon Lex obscures slot values in conversation logs. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObfuscationSetting {
+pub struct ObfuscationSetting  {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     #[doc(hidden)]
     pub obfuscation_setting_type: std::option::Option<crate::types::ObfuscationSettingType>,
 }
 impl ObfuscationSetting {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-    pub fn obfuscation_setting_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ObfuscationSettingType> {
+    pub fn obfuscation_setting_type(&self) -> std::option::Option<& crate::types::ObfuscationSettingType> {
         self.obfuscation_setting_type.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ObfuscationSettingBuilder {
         self
     }
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
-    pub fn set_obfuscation_setting_type(
-        mut self,
-        input: std::option::Option<crate::types::ObfuscationSettingType>,
-    ) -> Self {
-        self.obfuscation_setting_type = input;
-        self
+    pub fn set_obfuscation_setting_type(mut self, input: std::option::Option<crate::types::ObfuscationSettingType>) -> Self {
+        self.obfuscation_setting_type = input; self
     }
     /// Consumes the builder and constructs a [`ObfuscationSetting`](crate::types::ObfuscationSetting).
     pub fn build(self) -> crate::types::ObfuscationSetting {
         crate::types::ObfuscationSetting {
-            obfuscation_setting_type: self.obfuscation_setting_type,
+            obfuscation_setting_type: self.obfuscation_setting_type
+            ,
         }
     }
 }
+

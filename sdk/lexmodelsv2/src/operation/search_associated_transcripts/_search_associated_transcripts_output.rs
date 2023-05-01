@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAssociatedTranscriptsOutput {
+pub struct SearchAssociatedTranscriptsOutput  {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -20,8 +20,7 @@ pub struct SearchAssociatedTranscriptsOutput {
     pub next_index: std::option::Option<i32>,
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
     #[doc(hidden)]
-    pub associated_transcripts:
-        std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
+    pub associated_transcripts: std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
     /// <p>The total number of transcripts returned by the search.</p>
     #[doc(hidden)]
     pub total_results: std::option::Option<i32>,
@@ -29,19 +28,19 @@ pub struct SearchAssociatedTranscriptsOutput {
 }
 impl SearchAssociatedTranscriptsOutput {
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
@@ -49,9 +48,7 @@ impl SearchAssociatedTranscriptsOutput {
         self.next_index
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn associated_transcripts(
-        &self,
-    ) -> std::option::Option<&[crate::types::AssociatedTranscript]> {
+    pub fn associated_transcripts(&self) -> std::option::Option<& [crate::types::AssociatedTranscript]> {
         self.associated_transcripts.as_deref()
     }
     /// <p>The total number of transcripts returned by the search.</p>
@@ -60,13 +57,13 @@ impl SearchAssociatedTranscriptsOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchAssociatedTranscriptsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchAssociatedTranscriptsOutput {
     /// Creates a new builder-style object to manufacture [`SearchAssociatedTranscriptsOutput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput).
-    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder{
+    pub fn builder() -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder {
         crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsOutputBuilder::default()
     }
 }
@@ -80,8 +77,7 @@ pub struct SearchAssociatedTranscriptsOutputBuilder {
     pub(crate) locale_id: std::option::Option<std::string::String>,
     pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
     pub(crate) next_index: std::option::Option<i32>,
-    pub(crate) associated_transcripts:
-        std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
+    pub(crate) associated_transcripts: std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
     pub(crate) total_results: std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -93,8 +89,7 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +98,7 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +107,7 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,12 +115,8 @@ impl SearchAssociatedTranscriptsOutputBuilder {
         self
     }
     /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.bot_recommendation_id = input;
-        self
+    pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.bot_recommendation_id = input; self
     }
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
     pub fn next_index(mut self, input: i32) -> Self {
@@ -136,8 +125,7 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     }
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
     pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.next_index = input;
-        self
+        self.next_index = input; self
     }
     /// Appends an item to `associated_transcripts`.
     ///
@@ -146,17 +134,13 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
     pub fn associated_transcripts(mut self, input: crate::types::AssociatedTranscript) -> Self {
         let mut v = self.associated_transcripts.unwrap_or_default();
-        v.push(input);
-        self.associated_transcripts = Some(v);
-        self
+                        v.push(input);
+                        self.associated_transcripts = Some(v);
+                        self
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn set_associated_transcripts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
-    ) -> Self {
-        self.associated_transcripts = input;
-        self
+    pub fn set_associated_transcripts(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociatedTranscript>>) -> Self {
+        self.associated_transcripts = input; self
     }
     /// <p>The total number of transcripts returned by the search.</p>
     pub fn total_results(mut self, input: i32) -> Self {
@@ -165,31 +149,36 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     }
     /// <p>The total number of transcripts returned by the search.</p>
     pub fn set_total_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_results = input;
-        self
+        self.total_results = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsOutput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
+    pub fn build(self) -> crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_recommendation_id: self.bot_recommendation_id,
-            next_index: self.next_index,
-            associated_transcripts: self.associated_transcripts,
-            total_results: self.total_results,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            bot_recommendation_id: self.bot_recommendation_id
+            ,
+            next_index: self.next_index
+            ,
+            associated_transcripts: self.associated_transcripts
+            ,
+            total_results: self.total_results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides settings for a message that is sent to the user when a fulfillment Lambda function starts running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FulfillmentStartResponseSpecification {
+pub struct FulfillmentStartResponseSpecification  {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     #[doc(hidden)]
     pub delay_in_seconds: std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl FulfillmentStartResponseSpecification {
         self.delay_in_seconds
     }
     /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::types::MessageGroup]> {
+    pub fn message_groups(&self) -> std::option::Option<& [crate::types::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
@@ -51,8 +51,7 @@ impl FulfillmentStartResponseSpecificationBuilder {
     }
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     pub fn set_delay_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.delay_in_seconds = input;
-        self
+        self.delay_in_seconds = input; self
     }
     /// Appends an item to `message_groups`.
     ///
@@ -61,17 +60,13 @@ impl FulfillmentStartResponseSpecificationBuilder {
     /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
-        v.push(input);
-        self.message_groups = Some(v);
-        self
+                        v.push(input);
+                        self.message_groups = Some(v);
+                        self
     }
     /// <p>One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn set_message_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
-    ) -> Self {
-        self.message_groups = input;
-        self
+    pub fn set_message_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>) -> Self {
+        self.message_groups = input; self
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
@@ -80,15 +75,18 @@ impl FulfillmentStartResponseSpecificationBuilder {
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input;
-        self
+        self.allow_interrupt = input; self
     }
     /// Consumes the builder and constructs a [`FulfillmentStartResponseSpecification`](crate::types::FulfillmentStartResponseSpecification).
     pub fn build(self) -> crate::types::FulfillmentStartResponseSpecification {
         crate::types::FulfillmentStartResponseSpecification {
-            delay_in_seconds: self.delay_in_seconds,
-            message_groups: self.message_groups,
-            allow_interrupt: self.allow_interrupt,
+            delay_in_seconds: self.delay_in_seconds
+            ,
+            message_groups: self.message_groups
+            ,
+            allow_interrupt: self.allow_interrupt
+            ,
         }
     }
 }
+

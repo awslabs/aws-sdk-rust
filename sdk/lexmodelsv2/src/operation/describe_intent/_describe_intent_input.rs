@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIntentInput {
+pub struct DescribeIntentInput  {
     /// <p>The identifier of the intent to describe.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct DescribeIntentInput {
 }
 impl DescribeIntentInput {
     /// <p>The identifier of the intent to describe.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The identifier of the bot associated with the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeIntentInputBuilder {
     }
     /// <p>The identifier of the intent to describe.</p>
     pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The identifier of the bot associated with the intent.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl DescribeIntentInputBuilder {
     }
     /// <p>The identifier of the bot associated with the intent.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot associated with the intent.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl DescribeIntentInputBuilder {
     }
     /// <p>The version of the bot associated with the intent.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,21 +85,22 @@ impl DescribeIntentInputBuilder {
     }
     /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeIntentInput`](crate::operation::describe_intent::DescribeIntentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_intent::DescribeIntentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_intent::DescribeIntentInput {
-            intent_id: self.intent_id,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_intent::DescribeIntentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_intent::DescribeIntentInput {
+                intent_id: self.intent_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
+        )
     }
 }
+

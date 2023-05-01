@@ -3,7 +3,7 @@
 /// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotExportSpecification {
+pub struct BotExportSpecification  {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BotExportSpecification {
 }
 impl BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BotExportSpecificationBuilder {
     }
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl BotExportSpecificationBuilder {
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// Consumes the builder and constructs a [`BotExportSpecification`](crate::types::BotExportSpecification).
     pub fn build(self) -> crate::types::BotExportSpecification {
         crate::types::BotExportSpecification {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
         }
     }
 }
+

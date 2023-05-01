@@ -3,7 +3,7 @@
 /// <p>Specifies the DTMF input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DtmfSpecification {
+pub struct DtmfSpecification  {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     #[doc(hidden)]
     pub max_length: std::option::Option<i32>,
@@ -27,11 +27,11 @@ impl DtmfSpecification {
         self.end_timeout_ms
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn deletion_character(&self) -> std::option::Option<&str> {
+    pub fn deletion_character(&self) -> std::option::Option<& str> {
         self.deletion_character.as_deref()
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn end_character(&self) -> std::option::Option<&str> {
+    pub fn end_character(&self) -> std::option::Option<& str> {
         self.end_character.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DtmfSpecificationBuilder {
     }
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_length = input;
-        self
+        self.max_length = input; self
     }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
     pub fn end_timeout_ms(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl DtmfSpecificationBuilder {
     }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
     pub fn set_end_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.end_timeout_ms = input;
-        self
+        self.end_timeout_ms = input; self
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
     pub fn deletion_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl DtmfSpecificationBuilder {
         self
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn set_deletion_character(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deletion_character = input;
-        self
+    pub fn set_deletion_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deletion_character = input; self
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
     pub fn end_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl DtmfSpecificationBuilder {
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
     pub fn set_end_character(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_character = input;
-        self
+        self.end_character = input; self
     }
     /// Consumes the builder and constructs a [`DtmfSpecification`](crate::types::DtmfSpecification).
     pub fn build(self) -> crate::types::DtmfSpecification {
         crate::types::DtmfSpecification {
-            max_length: self.max_length,
-            end_timeout_ms: self.end_timeout_ms,
-            deletion_character: self.deletion_character,
-            end_character: self.end_character,
+            max_length: self.max_length
+            ,
+            end_timeout_ms: self.end_timeout_ms
+            ,
+            deletion_character: self.deletion_character
+            ,
+            end_character: self.end_character
+            ,
         }
     }
 }
+

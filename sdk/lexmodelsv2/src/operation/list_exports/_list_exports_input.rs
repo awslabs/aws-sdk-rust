@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsInput {
+pub struct ListExportsInput  {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListExportsInput {
     /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p> 
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -28,32 +28,32 @@ pub struct ListExportsInput {
 }
 impl ListExportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to list exports for. </p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::ExportSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::ExportSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ExportFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::ExportFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p> 
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -84,8 +84,7 @@ impl ListExportsInputBuilder {
     }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot to list exports for. </p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +93,7 @@ impl ListExportsInputBuilder {
     }
     /// <p>The version of the bot to list exports for. </p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn sort_by(mut self, input: crate::types::ExportSortBy) -> Self {
@@ -104,8 +102,7 @@ impl ListExportsInputBuilder {
     }
     /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ExportSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -114,17 +111,13 @@ impl ListExportsInputBuilder {
     /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(mut self, input: crate::types::ExportFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExportFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExportFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -133,20 +126,18 @@ impl ListExportsInputBuilder {
     }
     /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p> 
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. </p> 
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,24 +146,28 @@ impl ListExportsInputBuilder {
     }
     /// <p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Consumes the builder and constructs a [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_exports::ListExportsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_exports::ListExportsInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            sort_by: self.sort_by,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            locale_id: self.locale_id,
-        })
+    pub fn build(self) -> Result<crate::operation::list_exports::ListExportsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_exports::ListExportsInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                sort_by: self.sort_by
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                locale_id: self.locale_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The object containing information that associates the recommended intent/slot type with a conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedTranscript {
+pub struct AssociatedTranscript  {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
 }
 impl AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AssociatedTranscriptBuilder {
     }
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// Consumes the builder and constructs a [`AssociatedTranscript`](crate::types::AssociatedTranscript).
     pub fn build(self) -> crate::types::AssociatedTranscript {
         crate::types::AssociatedTranscript {
-            transcript: self.transcript,
+            transcript: self.transcript
+            ,
         }
     }
 }
+

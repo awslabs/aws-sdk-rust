@@ -3,7 +3,7 @@
 /// <p>Configures conversation logging that saves audio, text, and metadata for the conversations with your users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConversationLogSettings {
+pub struct ConversationLogSettings  {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
     #[doc(hidden)]
     pub text_log_settings: std::option::Option<std::vec::Vec<crate::types::TextLogSetting>>,
@@ -13,11 +13,11 @@ pub struct ConversationLogSettings {
 }
 impl ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn text_log_settings(&self) -> std::option::Option<&[crate::types::TextLogSetting]> {
+    pub fn text_log_settings(&self) -> std::option::Option<& [crate::types::TextLogSetting]> {
         self.text_log_settings.as_deref()
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn audio_log_settings(&self) -> std::option::Option<&[crate::types::AudioLogSetting]> {
+    pub fn audio_log_settings(&self) -> std::option::Option<& [crate::types::AudioLogSetting]> {
         self.audio_log_settings.as_deref()
     }
 }
@@ -33,8 +33,7 @@ impl ConversationLogSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConversationLogSettingsBuilder {
     pub(crate) text_log_settings: std::option::Option<std::vec::Vec<crate::types::TextLogSetting>>,
-    pub(crate) audio_log_settings:
-        std::option::Option<std::vec::Vec<crate::types::AudioLogSetting>>,
+    pub(crate) audio_log_settings: std::option::Option<std::vec::Vec<crate::types::AudioLogSetting>>,
 }
 impl ConversationLogSettingsBuilder {
     /// Appends an item to `text_log_settings`.
@@ -44,17 +43,13 @@ impl ConversationLogSettingsBuilder {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
     pub fn text_log_settings(mut self, input: crate::types::TextLogSetting) -> Self {
         let mut v = self.text_log_settings.unwrap_or_default();
-        v.push(input);
-        self.text_log_settings = Some(v);
-        self
+                        v.push(input);
+                        self.text_log_settings = Some(v);
+                        self
     }
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn set_text_log_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TextLogSetting>>,
-    ) -> Self {
-        self.text_log_settings = input;
-        self
+    pub fn set_text_log_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::TextLogSetting>>) -> Self {
+        self.text_log_settings = input; self
     }
     /// Appends an item to `audio_log_settings`.
     ///
@@ -63,23 +58,22 @@ impl ConversationLogSettingsBuilder {
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
     pub fn audio_log_settings(mut self, input: crate::types::AudioLogSetting) -> Self {
         let mut v = self.audio_log_settings.unwrap_or_default();
-        v.push(input);
-        self.audio_log_settings = Some(v);
-        self
+                        v.push(input);
+                        self.audio_log_settings = Some(v);
+                        self
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn set_audio_log_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AudioLogSetting>>,
-    ) -> Self {
-        self.audio_log_settings = input;
-        self
+    pub fn set_audio_log_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::AudioLogSetting>>) -> Self {
+        self.audio_log_settings = input; self
     }
     /// Consumes the builder and constructs a [`ConversationLogSettings`](crate::types::ConversationLogSettings).
     pub fn build(self) -> crate::types::ConversationLogSettings {
         crate::types::ConversationLogSettings {
-            text_log_settings: self.text_log_settings,
-            audio_log_settings: self.audio_log_settings,
+            text_log_settings: self.text_log_settings
+            ,
+            audio_log_settings: self.audio_log_settings
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The slot values that Amazon Lex uses when it sets slot values in a dialog step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotValueOverride {
+pub struct SlotValueOverride  {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     #[doc(hidden)]
     pub shape: std::option::Option<crate::types::SlotShape>,
@@ -16,15 +16,15 @@ pub struct SlotValueOverride {
 }
 impl SlotValueOverride {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    pub fn shape(&self) -> std::option::Option<&crate::types::SlotShape> {
+    pub fn shape(&self) -> std::option::Option<& crate::types::SlotShape> {
         self.shape.as_ref()
     }
     /// <p>The current value of the slot.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::SlotValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::SlotValue> {
         self.value.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::SlotValueOverride]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::SlotValueOverride]> {
         self.values.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl SlotValueOverrideBuilder {
     }
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     pub fn set_shape(mut self, input: std::option::Option<crate::types::SlotShape>) -> Self {
-        self.shape = input;
-        self
+        self.shape = input; self
     }
     /// <p>The current value of the slot.</p>
     pub fn value(mut self, input: crate::types::SlotValue) -> Self {
@@ -61,8 +60,7 @@ impl SlotValueOverrideBuilder {
     }
     /// <p>The current value of the slot.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::SlotValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -71,24 +69,24 @@ impl SlotValueOverrideBuilder {
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
     pub fn values(mut self, input: crate::types::SlotValueOverride) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotValueOverride>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotValueOverride>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`SlotValueOverride`](crate::types::SlotValueOverride).
     pub fn build(self) -> crate::types::SlotValueOverride {
         crate::types::SlotValueOverride {
-            shape: self.shape,
-            value: self.value,
-            values: self.values,
+            shape: self.shape
+            ,
+            value: self.value
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

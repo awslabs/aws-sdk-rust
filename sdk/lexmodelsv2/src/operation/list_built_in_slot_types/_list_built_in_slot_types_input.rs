@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuiltInSlotTypesInput {
+pub struct ListBuiltInSlotTypesInput  {
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListBuiltInSlotTypesInput {
 }
 impl ListBuiltInSlotTypesInput {
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::BuiltInSlotTypeSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::BuiltInSlotTypeSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -30,15 +30,13 @@ impl ListBuiltInSlotTypesInput {
         self.max_results
     }
     /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListBuiltInSlotTypesInput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder {
         crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl ListBuiltInSlotTypesInputBuilder {
     }
     /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
     pub fn sort_by(mut self, input: crate::types::BuiltInSlotTypeSortBy) -> Self {
@@ -69,12 +66,8 @@ impl ListBuiltInSlotTypesInputBuilder {
         self
     }
     /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::BuiltInSlotTypeSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::BuiltInSlotTypeSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,8 +76,7 @@ impl ListBuiltInSlotTypesInputBuilder {
     }
     /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +85,22 @@ impl ListBuiltInSlotTypesInputBuilder {
     }
     /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput {
-                locale_id: self.locale_id,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                locale_id: self.locale_id
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

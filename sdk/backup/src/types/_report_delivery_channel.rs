@@ -3,7 +3,7 @@
 /// <p>Contains information from your report plan about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportDeliveryChannel {
+pub struct ReportDeliveryChannel  {
     /// <p>The unique name of the S3 bucket that receives your reports.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReportDeliveryChannel {
 }
 impl ReportDeliveryChannel {
     /// <p>The unique name of the S3 bucket that receives your reports.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
-    pub fn formats(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn formats(&self) -> std::option::Option<& [std::string::String]> {
         self.formats.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ReportDeliveryChannelBuilder {
     }
     /// <p>The unique name of the S3 bucket that receives your reports.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ReportDeliveryChannelBuilder {
     }
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// Appends an item to `formats`.
     ///
@@ -71,24 +69,24 @@ impl ReportDeliveryChannelBuilder {
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
     pub fn formats(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.formats.unwrap_or_default();
-        v.push(input.into());
-        self.formats = Some(v);
-        self
+                        v.push(input.into());
+                        self.formats = Some(v);
+                        self
     }
     /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
-    pub fn set_formats(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.formats = input;
-        self
+    pub fn set_formats(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.formats = input; self
     }
     /// Consumes the builder and constructs a [`ReportDeliveryChannel`](crate::types::ReportDeliveryChannel).
     pub fn build(self) -> crate::types::ReportDeliveryChannel {
         crate::types::ReportDeliveryChannel {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_key_prefix: self.s3_key_prefix,
-            formats: self.formats,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_key_prefix: self.s3_key_prefix
+            ,
+            formats: self.formats
+            ,
         }
     }
 }
+

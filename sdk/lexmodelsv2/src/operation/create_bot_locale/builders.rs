@@ -4,71 +4,49 @@ pub use crate::operation::create_bot_locale::_create_bot_locale_output::CreateBo
 pub use crate::operation::create_bot_locale::_create_bot_locale_input::CreateBotLocaleInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBotLocale`.
-///
+/// 
 /// <p>Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBotLocaleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_bot_locale::builders::CreateBotLocaleInputBuilder,
-}
-impl CreateBotLocaleFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_bot_locale::builders::CreateBotLocaleInputBuilder
+            }
+impl CreateBotLocaleFluentBuilder  {
     /// Creates a new `CreateBotLocale`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_bot_locale::CreateBotLocale,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_bot_locale::CreateBotLocaleOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_bot_locale::CreateBotLocaleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_bot_locale::CreateBotLocale, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_bot_locale::CreateBotLocaleOutput, aws_smithy_http::result::SdkError<crate::operation::create_bot_locale::CreateBotLocaleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the bot to create the locale for.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -109,25 +87,25 @@ impl CreateBotLocaleFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p>AMAZON.FallbackIntent</p> </li>
-    /// <li> <p>IntentA</p> </li>
-    /// <li> <p>IntentB</p> </li>
-    /// <li> <p>IntentC</p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p>AMAZON.FallbackIntent</p> </li> 
+    /// <li> <p>IntentA</p> </li> 
+    /// <li> <p>IntentB</p> </li> 
+    /// <li> <p>IntentC</p> </li> 
     /// </ul>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
         self.inner = self.inner.nlu_intent_confidence_threshold(input);
         self
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p>AMAZON.FallbackIntent</p> </li>
-    /// <li> <p>IntentA</p> </li>
-    /// <li> <p>IntentB</p> </li>
-    /// <li> <p>IntentC</p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p>AMAZON.FallbackIntent</p> </li> 
+    /// <li> <p>IntentA</p> </li> 
+    /// <li> <p>IntentB</p> </li> 
+    /// <li> <p>IntentC</p> </li> 
     /// </ul>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
@@ -139,11 +117,9 @@ impl CreateBotLocaleFluentBuilder {
         self
     }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.inner = self.inner.set_voice_settings(input);
         self
     }
 }
+

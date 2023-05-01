@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSlotInput {
+pub struct UpdateSlotInput  {
     /// <p>The unique identifier for the slot to update.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ pub struct UpdateSlotInput {
     /// <p>The identifier of the intent that contains the slot.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
-    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::types::MultipleValuesSetting>,
@@ -43,56 +43,52 @@ pub struct UpdateSlotInput {
 }
 impl UpdateSlotInput {
     /// <p>The unique identifier for the slot to update.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The new name for the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The new description for the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the new slot type to associate with this slot. </p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::types::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::types::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::types::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>The unique identifier of the bot that contains the slot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the intent that contains the slot.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
-    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> std::option::Option<& crate::types::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::types::SubSlotSetting> {
+    pub fn sub_slot_setting(&self) -> std::option::Option<& crate::types::SubSlotSetting> {
         self.sub_slot_setting.as_ref()
     }
 }
@@ -111,8 +107,7 @@ pub struct UpdateSlotInputBuilder {
     pub(crate) slot_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) slot_type_id: std::option::Option<std::string::String>,
-    pub(crate) value_elicitation_setting:
-        std::option::Option<crate::types::SlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: std::option::Option<crate::types::SlotValueElicitationSetting>,
     pub(crate) obfuscation_setting: std::option::Option<crate::types::ObfuscationSetting>,
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -129,8 +124,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The unique identifier for the slot to update.</p>
     pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_id = input;
-        self
+        self.slot_id = input; self
     }
     /// <p>The new name for the slot.</p>
     pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +133,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The new name for the slot.</p>
     pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// <p>The new description for the slot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +142,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The new description for the slot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The unique identifier of the new slot type to associate with this slot. </p>
     pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,24 +151,16 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The unique identifier of the new slot type to associate with this slot. </p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = Some(input);
         self
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: std::option::Option<crate::types::SlotValueElicitationSetting>,
-    ) -> Self {
-        self.value_elicitation_setting = input;
-        self
+    pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
+        self.value_elicitation_setting = input; self
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
@@ -184,12 +168,8 @@ impl UpdateSlotInputBuilder {
         self
     }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
-        self.obfuscation_setting = input;
-        self
+    pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::types::ObfuscationSetting>) -> Self {
+        self.obfuscation_setting = input; self
     }
     /// <p>The unique identifier of the bot that contains the slot.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,8 +178,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The unique identifier of the bot that contains the slot.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,8 +187,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,8 +196,7 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the intent that contains the slot.</p>
     pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,23 +205,18 @@ impl UpdateSlotInputBuilder {
     }
     /// <p>The identifier of the intent that contains the slot.</p>
     pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
-    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(mut self, input: crate::types::MultipleValuesSetting) -> Self {
         self.multiple_values_setting = Some(input);
         self
     }
-    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_multiple_values_setting(
-        mut self,
-        input: std::option::Option<crate::types::MultipleValuesSetting>,
-    ) -> Self {
-        self.multiple_values_setting = input;
-        self
+    pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
+        self.multiple_values_setting = input; self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     pub fn sub_slot_setting(mut self, input: crate::types::SubSlotSetting) -> Self {
@@ -252,33 +224,39 @@ impl UpdateSlotInputBuilder {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(
-        mut self,
-        input: std::option::Option<crate::types::SubSlotSetting>,
-    ) -> Self {
-        self.sub_slot_setting = input;
-        self
+    pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::types::SubSlotSetting>) -> Self {
+        self.sub_slot_setting = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSlotInput`](crate::operation::update_slot::UpdateSlotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_slot::UpdateSlotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_slot::UpdateSlotInput {
-            slot_id: self.slot_id,
-            slot_name: self.slot_name,
-            description: self.description,
-            slot_type_id: self.slot_type_id,
-            value_elicitation_setting: self.value_elicitation_setting,
-            obfuscation_setting: self.obfuscation_setting,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            intent_id: self.intent_id,
-            multiple_values_setting: self.multiple_values_setting,
-            sub_slot_setting: self.sub_slot_setting,
-        })
+    pub fn build(self) -> Result<crate::operation::update_slot::UpdateSlotInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_slot::UpdateSlotInput {
+                slot_id: self.slot_id
+                ,
+                slot_name: self.slot_name
+                ,
+                description: self.description
+                ,
+                slot_type_id: self.slot_type_id
+                ,
+                value_elicitation_setting: self.value_elicitation_setting
+                ,
+                obfuscation_setting: self.obfuscation_setting
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                intent_id: self.intent_id
+                ,
+                multiple_values_setting: self.multiple_values_setting
+                ,
+                sub_slot_setting: self.sub_slot_setting
+                ,
+            }
+        )
     }
 }
+

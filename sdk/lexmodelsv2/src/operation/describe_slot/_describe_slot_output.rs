@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSlotOutput {
+pub struct DescribeSlotOutput  {
     /// <p>The unique identifier generated for the slot.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ pub struct DescribeSlotOutput {
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub multiple_values_setting: std::option::Option<crate::types::MultipleValuesSetting>,
@@ -50,72 +50,68 @@ pub struct DescribeSlotOutput {
 }
 impl DescribeSlotOutput {
     /// <p>The unique identifier generated for the slot.</p>
-    pub fn slot_id(&self) -> std::option::Option<&str> {
+    pub fn slot_id(&self) -> std::option::Option<& str> {
         self.slot_id.as_deref()
     }
     /// <p>The name specified for the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>The description specified for the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::SlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> std::option::Option<& crate::types::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::types::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::types::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>The identifier of the bot associated with the slot.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified for the slot.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the intent associated with the slot.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn multiple_values_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::MultipleValuesSetting> {
+    pub fn multiple_values_setting(&self) -> std::option::Option<& crate::types::MultipleValuesSetting> {
         self.multiple_values_setting.as_ref()
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn sub_slot_setting(&self) -> std::option::Option<&crate::types::SubSlotSetting> {
+    pub fn sub_slot_setting(&self) -> std::option::Option<& crate::types::SubSlotSetting> {
         self.sub_slot_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSlotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSlotOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotOutput`](crate::operation::describe_slot::DescribeSlotOutput).
     pub fn builder() -> crate::operation::describe_slot::builders::DescribeSlotOutputBuilder {
@@ -131,8 +127,7 @@ pub struct DescribeSlotOutputBuilder {
     pub(crate) slot_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) slot_type_id: std::option::Option<std::string::String>,
-    pub(crate) value_elicitation_setting:
-        std::option::Option<crate::types::SlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: std::option::Option<crate::types::SlotValueElicitationSetting>,
     pub(crate) obfuscation_setting: std::option::Option<crate::types::ObfuscationSetting>,
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -152,8 +147,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The unique identifier generated for the slot.</p>
     pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_id = input;
-        self
+        self.slot_id = input; self
     }
     /// <p>The name specified for the slot.</p>
     pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +156,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The name specified for the slot.</p>
     pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// <p>The description specified for the slot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +165,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The description specified for the slot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
     pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,24 +174,16 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = Some(input);
         self
     }
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: std::option::Option<crate::types::SlotValueElicitationSetting>,
-    ) -> Self {
-        self.value_elicitation_setting = input;
-        self
+    pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
+        self.value_elicitation_setting = input; self
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
@@ -207,12 +191,8 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
-        self.obfuscation_setting = input;
-        self
+    pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::types::ObfuscationSetting>) -> Self {
+        self.obfuscation_setting = input; self
     }
     /// <p>The identifier of the bot associated with the slot.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,8 +201,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The identifier of the bot associated with the slot.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot associated with the slot.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +210,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The version of the bot associated with the slot.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The language and locale specified for the slot.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +219,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The language and locale specified for the slot.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the intent associated with the slot.</p>
     pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,8 +228,7 @@ impl DescribeSlotOutputBuilder {
     }
     /// <p>The identifier of the intent associated with the slot.</p>
     pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>A timestamp of the date and time that the slot was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -260,12 +236,8 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -273,27 +245,19 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(mut self, input: crate::types::MultipleValuesSetting) -> Self {
         self.multiple_values_setting = Some(input);
         self
     }
-    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p> 
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_multiple_values_setting(
-        mut self,
-        input: std::option::Option<crate::types::MultipleValuesSetting>,
-    ) -> Self {
-        self.multiple_values_setting = input;
-        self
+    pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
+        self.multiple_values_setting = input; self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     pub fn sub_slot_setting(mut self, input: crate::types::SubSlotSetting) -> Self {
@@ -301,40 +265,51 @@ impl DescribeSlotOutputBuilder {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(
-        mut self,
-        input: std::option::Option<crate::types::SubSlotSetting>,
-    ) -> Self {
-        self.sub_slot_setting = input;
-        self
+    pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::types::SubSlotSetting>) -> Self {
+        self.sub_slot_setting = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSlotOutput`](crate::operation::describe_slot::DescribeSlotOutput).
     pub fn build(self) -> crate::operation::describe_slot::DescribeSlotOutput {
         crate::operation::describe_slot::DescribeSlotOutput {
-            slot_id: self.slot_id,
-            slot_name: self.slot_name,
-            description: self.description,
-            slot_type_id: self.slot_type_id,
-            value_elicitation_setting: self.value_elicitation_setting,
-            obfuscation_setting: self.obfuscation_setting,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            intent_id: self.intent_id,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            multiple_values_setting: self.multiple_values_setting,
-            sub_slot_setting: self.sub_slot_setting,
+            slot_id: self.slot_id
+            ,
+            slot_name: self.slot_name
+            ,
+            description: self.description
+            ,
+            slot_type_id: self.slot_type_id
+            ,
+            value_elicitation_setting: self.value_elicitation_setting
+            ,
+            obfuscation_setting: self.obfuscation_setting
+            ,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            intent_id: self.intent_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            multiple_values_setting: self.multiple_values_setting
+            ,
+            sub_slot_setting: self.sub_slot_setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

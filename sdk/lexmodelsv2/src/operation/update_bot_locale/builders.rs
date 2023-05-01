@@ -4,71 +4,49 @@ pub use crate::operation::update_bot_locale::_update_bot_locale_output::UpdateBo
 pub use crate::operation::update_bot_locale::_update_bot_locale_input::UpdateBotLocaleInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateBotLocale`.
-///
+/// 
 /// <p>Updates the settings that a bot has for a specific locale.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBotLocaleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_bot_locale::builders::UpdateBotLocaleInputBuilder,
-}
-impl UpdateBotLocaleFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_bot_locale::builders::UpdateBotLocaleInputBuilder
+            }
+impl UpdateBotLocaleFluentBuilder  {
     /// Creates a new `UpdateBotLocale`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_bot_locale::UpdateBotLocale,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_bot_locale::UpdateBotLocaleOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_bot_locale::UpdateBotLocaleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_bot_locale::UpdateBotLocale, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_bot_locale::UpdateBotLocaleOutput, aws_smithy_http::result::SdkError<crate::operation::update_bot_locale::UpdateBotLocaleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The unique identifier of the bot that contains the locale.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -125,11 +103,9 @@ impl UpdateBotLocaleFluentBuilder {
         self
     }
     /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.inner = self.inner.set_voice_settings(input);
         self
     }
 }
+

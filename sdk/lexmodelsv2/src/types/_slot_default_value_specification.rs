@@ -3,14 +3,14 @@
 /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotDefaultValueSpecification {
+pub struct SlotDefaultValueSpecification  {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     #[doc(hidden)]
     pub default_value_list: std::option::Option<std::vec::Vec<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn default_value_list(&self) -> std::option::Option<&[crate::types::SlotDefaultValue]> {
+    pub fn default_value_list(&self) -> std::option::Option<& [crate::types::SlotDefaultValue]> {
         self.default_value_list.as_deref()
     }
 }
@@ -25,8 +25,7 @@ impl SlotDefaultValueSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SlotDefaultValueSpecificationBuilder {
-    pub(crate) default_value_list:
-        std::option::Option<std::vec::Vec<crate::types::SlotDefaultValue>>,
+    pub(crate) default_value_list: std::option::Option<std::vec::Vec<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecificationBuilder {
     /// Appends an item to `default_value_list`.
@@ -36,22 +35,20 @@ impl SlotDefaultValueSpecificationBuilder {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     pub fn default_value_list(mut self, input: crate::types::SlotDefaultValue) -> Self {
         let mut v = self.default_value_list.unwrap_or_default();
-        v.push(input);
-        self.default_value_list = Some(v);
-        self
+                        v.push(input);
+                        self.default_value_list = Some(v);
+                        self
     }
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn set_default_value_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotDefaultValue>>,
-    ) -> Self {
-        self.default_value_list = input;
-        self
+    pub fn set_default_value_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotDefaultValue>>) -> Self {
+        self.default_value_list = input; self
     }
     /// Consumes the builder and constructs a [`SlotDefaultValueSpecification`](crate::types::SlotDefaultValueSpecification).
     pub fn build(self) -> crate::types::SlotDefaultValueSpecification {
         crate::types::SlotDefaultValueSpecification {
-            default_value_list: self.default_value_list,
+            default_value_list: self.default_value_list
+            ,
         }
     }
 }
+

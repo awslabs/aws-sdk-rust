@@ -3,14 +3,14 @@
 /// <p>Defines one of the values for a slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampleValue {
+pub struct SampleValue  {
     /// <p>The value that can be used for a slot type.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SampleValue {
     /// <p>The value that can be used for a slot type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl SampleValueBuilder {
     }
     /// <p>The value that can be used for a slot type.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SampleValue`](crate::types::SampleValue).
     pub fn build(self) -> crate::types::SampleValue {
-        crate::types::SampleValue { value: self.value }
+        crate::types::SampleValue {
+            value: self.value
+            ,
+        }
     }
 }
+

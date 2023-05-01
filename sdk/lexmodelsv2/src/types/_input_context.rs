@@ -3,14 +3,14 @@
 /// <p>The name of a context that must be active for an intent to be selected by Amazon Lex.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputContext {
+pub struct InputContext  {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl InputContextBuilder {
     }
     /// <p>The name of the context.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`InputContext`](crate::types::InputContext).
     pub fn build(self) -> crate::types::InputContext {
-        crate::types::InputContext { name: self.name }
+        crate::types::InputContext {
+            name: self.name
+            ,
+        }
     }
 }
+

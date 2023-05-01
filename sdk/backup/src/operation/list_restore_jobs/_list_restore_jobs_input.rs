@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRestoreJobsInput {
+pub struct ListRestoreJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -30,7 +30,7 @@ pub struct ListRestoreJobsInput {
 }
 impl ListRestoreJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -38,27 +38,27 @@ impl ListRestoreJobsInput {
         self.max_results
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn by_account_id(&self) -> std::option::Option<&str> {
+    pub fn by_account_id(&self) -> std::option::Option<& str> {
         self.by_account_id.as_deref()
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub fn by_created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub fn by_created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn by_status(&self) -> std::option::Option<&crate::types::RestoreJobStatus> {
+    pub fn by_status(&self) -> std::option::Option<& crate::types::RestoreJobStatus> {
         self.by_status.as_ref()
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_complete_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_complete_before.as_ref()
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_complete_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -100,8 +99,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +108,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn set_by_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_account_id = input;
-        self
+        self.by_account_id = input; self
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn by_created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,12 +116,8 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_created_before = input;
-        self
+    pub fn set_by_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_created_before = input; self
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
     pub fn by_created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,12 +125,8 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_created_after = input;
-        self
+    pub fn set_by_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_created_after = input; self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn by_status(mut self, input: crate::types::RestoreJobStatus) -> Self {
@@ -145,12 +134,8 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn set_by_status(
-        mut self,
-        input: std::option::Option<crate::types::RestoreJobStatus>,
-    ) -> Self {
-        self.by_status = input;
-        self
+    pub fn set_by_status(mut self, input: std::option::Option<crate::types::RestoreJobStatus>) -> Self {
+        self.by_status = input; self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,12 +143,8 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_complete_before = input;
-        self
+    pub fn set_by_complete_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_complete_before = input; self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -171,29 +152,31 @@ impl ListRestoreJobsInputBuilder {
         self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_complete_after = input;
-        self
+    pub fn set_by_complete_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_complete_after = input; self
     }
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_restore_jobs::ListRestoreJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_restore_jobs::ListRestoreJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            by_account_id: self.by_account_id,
-            by_created_before: self.by_created_before,
-            by_created_after: self.by_created_after,
-            by_status: self.by_status,
-            by_complete_before: self.by_complete_before,
-            by_complete_after: self.by_complete_after,
-        })
+    pub fn build(self) -> Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_restore_jobs::ListRestoreJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_account_id: self.by_account_id
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_status: self.by_status
+                ,
+                by_complete_before: self.by_complete_before
+                ,
+                by_complete_after: self.by_complete_after
+                ,
+            }
+        )
     }
 }
+
