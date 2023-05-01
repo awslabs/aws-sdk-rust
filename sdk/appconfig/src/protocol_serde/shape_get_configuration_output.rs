@@ -4,7 +4,7 @@ pub(crate) fn de_configuration_version_header(header_map: &http::HeaderMap) -> s
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_content_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::operation::get_configuration::GetConfigurationError> {
+pub(crate) fn de_content_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::operation::get_configuration::GetConfigurationError> {
     (!body.is_empty()).then(||{
         Ok(aws_smithy_types::Blob::new(body))
     }).transpose()

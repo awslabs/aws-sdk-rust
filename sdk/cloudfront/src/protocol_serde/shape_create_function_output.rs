@@ -4,7 +4,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_function_summary_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::FunctionSummary>, crate::operation::create_function::CreateFunctionError> {
+pub(crate) fn de_function_summary_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::FunctionSummary>, crate::operation::create_function::CreateFunctionError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_function_output::de_function_summary(body).map_err(crate::operation::create_function::CreateFunctionError::unhandled)
     }).transpose()

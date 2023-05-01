@@ -4,7 +4,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::StreamingDistribution>, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
+pub(crate) fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::StreamingDistribution>, crate::operation::update_streaming_distribution::UpdateStreamingDistributionError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_update_streaming_distribution_output::de_streaming_distribution(body).map_err(crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::unhandled)
     }).transpose()

@@ -9,7 +9,7 @@ pub(crate) fn de_location_header(header_map: &http::HeaderMap) -> std::result::R
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::StreamingDistribution>, crate::operation::create_streaming_distribution::CreateStreamingDistributionError> {
+pub(crate) fn de_streaming_distribution_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::StreamingDistribution>, crate::operation::create_streaming_distribution::CreateStreamingDistributionError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_streaming_distribution_output::de_streaming_distribution(body).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)
     }).transpose()

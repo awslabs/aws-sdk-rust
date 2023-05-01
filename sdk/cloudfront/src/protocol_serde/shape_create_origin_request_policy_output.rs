@@ -9,7 +9,7 @@ pub(crate) fn de_location_header(header_map: &http::HeaderMap) -> std::result::R
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_origin_request_policy_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::OriginRequestPolicy>, crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError> {
+pub(crate) fn de_origin_request_policy_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::OriginRequestPolicy>, crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_origin_request_policy_output::de_origin_request_policy(body).map_err(crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::unhandled)
     }).transpose()

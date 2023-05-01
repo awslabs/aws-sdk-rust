@@ -9,7 +9,7 @@ pub(crate) fn de_location_header(header_map: &http::HeaderMap) -> std::result::R
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_origin_access_control_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::OriginAccessControl>, crate::operation::create_origin_access_control::CreateOriginAccessControlError> {
+pub(crate) fn de_origin_access_control_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::OriginAccessControl>, crate::operation::create_origin_access_control::CreateOriginAccessControlError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_origin_access_control_output::de_origin_access_control(body).map_err(crate::operation::create_origin_access_control::CreateOriginAccessControlError::unhandled)
     }).transpose()

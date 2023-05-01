@@ -9,7 +9,7 @@ pub(crate) fn de_location_header(header_map: &http::HeaderMap) -> std::result::R
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_public_key_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::PublicKey>, crate::operation::create_public_key::CreatePublicKeyError> {
+pub(crate) fn de_public_key_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::PublicKey>, crate::operation::create_public_key::CreatePublicKeyError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_public_key_output::de_public_key(body).map_err(crate::operation::create_public_key::CreatePublicKeyError::unhandled)
     }).transpose()

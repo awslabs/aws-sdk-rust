@@ -4,7 +4,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_field_level_encryption_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::FieldLevelEncryption>, crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError> {
+pub(crate) fn de_field_level_encryption_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::FieldLevelEncryption>, crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_create_field_level_encryption_config_output::de_field_level_encryption(body).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)
     }).transpose()

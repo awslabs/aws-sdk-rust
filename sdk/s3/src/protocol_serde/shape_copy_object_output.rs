@@ -10,7 +10,7 @@ pub(crate) fn de_bucket_key_enabled_header(header_map: &http::HeaderMap) -> std:
                             }
 }
 
-pub fn de_copy_object_result_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::CopyObjectResult>, crate::operation::copy_object::CopyObjectError> {
+pub(crate) fn de_copy_object_result_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::CopyObjectResult>, crate::operation::copy_object::CopyObjectError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_copy_object_output::de_copy_object_result(body).map_err(crate::operation::copy_object::CopyObjectError::unhandled)
     }).transpose()

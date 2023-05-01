@@ -4,7 +4,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_key_group_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::KeyGroupConfig>, crate::operation::get_key_group_config::GetKeyGroupConfigError> {
+pub(crate) fn de_key_group_config_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::KeyGroupConfig>, crate::operation::get_key_group_config::GetKeyGroupConfigError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_get_key_group_config_output::de_key_group_config(body).map_err(crate::operation::get_key_group_config::GetKeyGroupConfigError::unhandled)
     }).transpose()

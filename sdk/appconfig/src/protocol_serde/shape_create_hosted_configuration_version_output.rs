@@ -9,7 +9,7 @@ pub(crate) fn de_configuration_profile_id_header(header_map: &http::HeaderMap) -
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_content_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
+pub(crate) fn de_content_payload(body: &[u8]) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError> {
     (!body.is_empty()).then(||{
         Ok(aws_smithy_types::Blob::new(body))
     }).transpose()

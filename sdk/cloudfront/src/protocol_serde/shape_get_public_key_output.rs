@@ -4,7 +4,7 @@ pub(crate) fn de_e_tag_header(header_map: &http::HeaderMap) -> std::result::Resu
     aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_public_key_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::PublicKey>, crate::operation::get_public_key::GetPublicKeyError> {
+pub(crate) fn de_public_key_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::PublicKey>, crate::operation::get_public_key::GetPublicKeyError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_get_public_key_output::de_public_key(body).map_err(crate::operation::get_public_key::GetPublicKeyError::unhandled)
     }).transpose()

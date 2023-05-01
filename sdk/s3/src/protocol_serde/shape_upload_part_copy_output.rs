@@ -10,7 +10,7 @@ pub(crate) fn de_bucket_key_enabled_header(header_map: &http::HeaderMap) -> std:
                             }
 }
 
-pub fn de_copy_part_result_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::CopyPartResult>, crate::operation::upload_part_copy::UploadPartCopyError> {
+pub(crate) fn de_copy_part_result_payload(body: &[u8]) -> std::result::Result<std::option::Option<crate::types::CopyPartResult>, crate::operation::upload_part_copy::UploadPartCopyError> {
     (!body.is_empty()).then(||{
         crate::protocol_serde::shape_upload_part_copy_output::de_copy_part_result(body).map_err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled)
     }).transpose()
