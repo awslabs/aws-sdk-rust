@@ -344,6 +344,25 @@ mod loader {
             self
         }
 
+        /// Override the name of the app used to build [`SdkConfig`](aws_types::SdkConfig).
+        ///
+        /// This _optional_ name is used to identify the application in the user agent that
+        /// gets sent along with requests.
+        ///
+        /// # Examples
+        /// ```no_run
+        /// # async fn create_config() {
+        /// use aws_config::AppName;
+        /// let config = aws_config::from_env()
+        ///     .app_name(AppName::new("my-app-name").expect("valid app name"))
+        ///     .load().await;
+        /// # }
+        /// ```
+        pub fn app_name(mut self, app_name: AppName) -> Self {
+            self.app_name = Some(app_name);
+            self
+        }
+
         /// Provides the ability to programmatically override the profile files that get loaded by the SDK.
         ///
         /// The [`Default`] for `ProfileFiles` includes the default SDK config and credential files located in
@@ -628,9 +647,10 @@ mod loader {
                 )
                 .load()
                 .await;
-            assert_eq!(loader.retry_config().unwrap().max_attempts(), 10);
-            assert_eq!(loader.region().unwrap().as_ref(), "us-west-4");
+            assert_eq!(10, loader.retry_config().unwrap().max_attempts());
+            assert_eq!("us-west-4", loader.region().unwrap().as_ref());
             assert_eq!(
+                "akid",
                 loader
                     .credentials_provider()
                     .unwrap()
@@ -638,9 +658,8 @@ mod loader {
                     .await
                     .unwrap()
                     .access_key_id(),
-                "akid"
             );
-            assert_eq!(loader.app_name(), Some(&AppName::new("correct").unwrap()));
+            assert_eq!(Some(&AppName::new("correct").unwrap()), loader.app_name());
             logs_assert(|lines| {
                 let num_config_loader_logs = lines
                     .iter()
@@ -669,16 +688,23 @@ mod loader {
         #[tokio::test]
         async fn load_fips() {
             let conf = base_conf().use_fips(true).load().await;
-            assert_eq!(conf.use_fips(), Some(true));
+            assert_eq!(Some(true), conf.use_fips());
         }
 
         #[tokio::test]
         async fn load_dual_stack() {
             let conf = base_conf().use_dual_stack(false).load().await;
-            assert_eq!(conf.use_dual_stack(), Some(false));
+            assert_eq!(Some(false), conf.use_dual_stack());
 
             let conf = base_conf().load().await;
-            assert_eq!(conf.use_dual_stack(), None);
+            assert_eq!(None, conf.use_dual_stack());
+        }
+
+        #[tokio::test]
+        async fn app_name() {
+            let app_name = AppName::new("my-app-name").unwrap();
+            let conf = base_conf().app_name(app_name.clone()).load().await;
+            assert_eq!(Some(&app_name), conf.app_name());
         }
     }
 }

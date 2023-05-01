@@ -46,6 +46,9 @@ impl AppName {
     pub fn new(app_name: impl Into<Cow<'static, str>>) -> Result<Self, InvalidAppName> {
         let app_name = app_name.into();
 
+        if app_name.is_empty() {
+            return Err(InvalidAppName);
+        }
         fn valid_character(c: char) -> bool {
             match c {
                 _ if c.is_ascii_alphanumeric() => true,
@@ -105,6 +108,7 @@ mod tests {
         assert!(AppName::new("asdf1234ASDF!#$%&'*+-.^_`|~").is_ok());
         assert!(AppName::new("foo bar").is_err());
         assert!(AppName::new("🚀").is_err());
+        assert!(AppName::new("").is_err());
     }
 
     #[tracing_test::traced_test]

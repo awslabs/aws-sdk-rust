@@ -1,4 +1,4 @@
-smithy_rs_revision = '76d92f3f1b1b8ebec935422d53b50420fe3d6f17'
+smithy_rs_revision = '852468bd46de85963ab8dabffa2a27a68d6bef2c'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.55.1'
-source_hash = '56b8e043ec4dfb0275ec850ab5a488948a406954e92f6abb82dadaeced1174bc'
+source_hash = 'c785359732961b5d5db1944858bac2ddee11f663337ab155cd3ef1b5d96bce70'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
@@ -2156,7 +2156,7 @@ source_hash = 'f575592852024be0856b685e69e719bc8c086e641fd061980be804b2a989f551'
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '0.55.1'
-source_hash = 'b4159f4ce9f237e84e3462f5a1cbef1de9e248ccc5b65319cae80951c81b3951'
+source_hash = '9c045401f8ee87427a5100b3ebd54b26ecfbb896b03b4e7491095bf301344098'
 [release.crates]
 aws-sdk-accessanalyzer = '0.27.0'
 aws-sdk-account = '0.27.0'
