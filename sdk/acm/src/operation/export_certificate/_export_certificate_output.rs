@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExportCertificateOutput {
+pub struct ExportCertificateOutput  {
     /// <p>The base64 PEM-encoded certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct ExportCertificateOutput {
 }
 impl ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
 }
-impl std::fmt::Debug for ExportCertificateOutput {
+impl  std::fmt::Debug for ExportCertificateOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExportCertificateOutput");
         formatter.field("certificate", &self.certificate);
@@ -39,14 +39,13 @@ impl std::fmt::Debug for ExportCertificateOutput {
     }
 }
 impl aws_http::request_id::RequestId for ExportCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ExportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ExportCertificateOutput`](crate::operation::export_certificate::ExportCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::export_certificate::builders::ExportCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::export_certificate::builders::ExportCertificateOutputBuilder {
         crate::operation::export_certificate::builders::ExportCertificateOutputBuilder::default()
     }
 }
@@ -68,8 +67,7 @@ impl ExportCertificateOutputBuilder {
     }
     /// <p>The base64 PEM-encoded certificate.</p>
     pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
     pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +75,8 @@ impl ExportCertificateOutputBuilder {
         self
     }
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_chain = input;
-        self
+    pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_chain = input; self
     }
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,24 +85,26 @@ impl ExportCertificateOutputBuilder {
     }
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ExportCertificateOutput`](crate::operation::export_certificate::ExportCertificateOutput).
     pub fn build(self) -> crate::operation::export_certificate::ExportCertificateOutput {
         crate::operation::export_certificate::ExportCertificateOutput {
-            certificate: self.certificate,
-            certificate_chain: self.certificate_chain,
-            private_key: self.private_key,
+            certificate: self.certificate
+            ,
+            certificate_chain: self.certificate_chain
+            ,
+            private_key: self.private_key
+            ,
             _request_id: self._request_id,
         }
     }
@@ -123,3 +119,4 @@ impl std::fmt::Debug for ExportCertificateOutputBuilder {
         formatter.finish()
     }
 }
+

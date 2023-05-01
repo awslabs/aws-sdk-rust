@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProductsOutput  {
+pub struct GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
     #[doc(hidden)]
     pub format_version: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct GetProductsOutput  {
 }
 impl GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
-    pub fn format_version(&self) -> std::option::Option<& str> {
+    pub fn format_version(&self) -> std::option::Option<&str> {
         self.format_version.as_deref()
     }
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    pub fn price_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn price_list(&self) -> std::option::Option<&[std::string::String]> {
         self.price_list.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetProductsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetProductsOutput {
     /// Creates a new builder-style object to manufacture [`GetProductsOutput`](crate::operation::get_products::GetProductsOutput).
     pub fn builder() -> crate::operation::get_products::builders::GetProductsOutputBuilder {
@@ -57,7 +57,8 @@ impl GetProductsOutputBuilder {
     }
     /// <p>The format version of the response. For example, aws_v1.</p>
     pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format_version = input; self
+        self.format_version = input;
+        self
     }
     /// Appends an item to `price_list`.
     ///
@@ -66,13 +67,17 @@ impl GetProductsOutputBuilder {
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
     pub fn price_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.price_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.price_list = Some(v);
-                        self
+        v.push(input.into());
+        self.price_list = Some(v);
+        self
     }
     /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    pub fn set_price_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.price_list = input; self
+    pub fn set_price_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.price_list = input;
+        self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +86,25 @@ impl GetProductsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetProductsOutput`](crate::operation::get_products::GetProductsOutput).
     pub fn build(self) -> crate::operation::get_products::GetProductsOutput {
         crate::operation::get_products::GetProductsOutput {
-            format_version: self.format_version
-            ,
-            price_list: self.price_list
-            ,
-            next_token: self.next_token
-            ,
+            format_version: self.format_version,
+            price_list: self.price_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-
